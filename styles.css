@@ -1,0 +1,477 @@
+:root{
+    --rust: #ff1edd;
+    --ink: #000;
+    --sand: #ddd;
+    --muted: #777;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: black; /* حطها هنا بصح */
+}
+/* === HEADER & NAV === */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #afafaf93;
+    z-index: 100;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    height: 80px;
+}
+header nav .logo{
+    color: #fff;
+    font-size: 25px;
+    font-weight: bolder;
+}
+header nav .logo span{
+    color: #ff1edd;
+}
+header nav .links{
+    display: flex;
+}
+header nav .links li{
+    position: relative;
+    margin: 0 25px;
+    height: 80px;
+    line-height: 80px;
+    list-style: none;
+}
+header nav .links a{
+   color: #c8c6c6;
+   font-size: 17px;
+}
+header nav .links li::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #ff1edd;
+    transition: 0.3s;
+}
+header nav .links li:hover::after,
+header nav .links li.active::after
+{
+    width: 100%;
+}
+header nav .social-link {
+    display: flex;
+}
+header nav .social-link a i{
+    color: #ff1edd;
+    font-size: 24px;
+    margin-left: 15px;
+}
+header nav .social-link a i:hover{
+    color: #fff;
+}
+#btnMenu{
+    display: none;
+}
+
+/* === HERO SECTION === */
+.hero-sec{
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+.hero-name{
+    font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: 0.9;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+}
+ .hero-name em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            color: var(--rust);
+            font-size: 0.85em;
+        }
+.hero-sec .contanier{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+.hero-sec .contanier .div-text{
+    width: 50%;
+}
+.hero-sec .contanier .div-text h1{
+    color: #fff;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+.hero-sec .contanier .div-text span{
+    font-size: 40px;
+    color: #ff1edd;
+    /* تحسين بسيط لإبعاد السطر السفلي عن العنوان */
+    display: block; 
+}
+.hero-sec .contanier .div-text p{
+    color: #c8c6c6;
+    font-size: 20px;
+    margin: 10px 0 50px;
+    line-height: 1.7;
+}
+.hero-sec .contanier .div-text .btn{
+    color: #fff;
+    border: 1px solid #ff1edd;
+    background-color: #ff1edd;
+    padding: 14px 40px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.hero-sec .contanier .div-text .btn:hover{
+    background: transparent;
+}
+.hero-sec .contanier .div-img{
+    width: 35%;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+}
+.hero-sec .contanier .div-img img{
+    width: 100%;
+}
+
+   .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+            line-height: 0.92;
+            letter-spacing: 0.01em;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+        .section-title em {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            color: var(--rust);
+            
+        }
+/* === ABOUT SECTION === */
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 80px 50px;
+    justify-content: center;
+}
+/* .about h1{
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.about h1 span{
+    color: #ff1edd;
+} */
+.about p{
+    text-align: justify;
+    color: #c8c6c6;
+    font-size: 20px;
+    margin: 10px 0 50px;
+    line-height: 1.7;
+    width: 80%; /* لتبدو الفقرة أكثر مركزية */
+    max-width: 1000px;
+}
+
+/* === SKILLS SECTION === */
+
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 80px 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-group {
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.skill-group-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sand);
+    padding-bottom: 0.5rem;
+}
+
+.skill-item{
+    margin-bottom: 1.5rem;
+}
+
+.skill-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name{
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.skill-pct{
+    color: var(--rust);
+    font-weight: 600;
+}
+
+.skill-track{
+    width: 100%;
+    height: 5px;
+    background: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-fill{
+    width: 100%;
+    height: 100%;
+    background: var(--rust);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 1s ease-in-out;
+}
+/* === PROJECTS SECTION === */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 80px 40px;
+    justify-content: center;
+  }
+  .projects h1 { font-size: 50px; color: #fff; font-style: italic; }
+  .projects h1 em { color: #ff00ee; }
+  .project_carte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5em;
+  }
+  .project-item {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #111;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0px 10px 15px rgba(255, 0, 238, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  .project-item:hover { transform: translateY(-10px); }
+  .project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #ff00ee;
+  }
+  .project-info { padding: 15px; background: #111; flex: 1; display: flex; flex-direction: column; }
+  .project-info h3 { color: #ff1edd; font-size: 1.3rem; margin-bottom: 8px; }
+  .project-info p { color: #c8c6c6; font-size: 0.95rem; margin-bottom: 12px; flex: 1; }
+  .tech-stack {
+    display: inline-block;
+    color: #fff;
+    background: #ff1edd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+  /* ===== BUTTONS ===== */
+  .project-btns {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding: 0 0 4px;
+  }
+  .btn-github, .btn-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-github {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid #444;
+  }
+  .btn-github:hover { border-color: #ff00ee; color: #ff00ee; }
+  .btn-live {
+    background: #ff1edd;
+    color: #fff;
+    border: 1.5px solid #ff1edd;
+  }
+  .btn-live:hover { background: transparent; color: #ff1edd; }
+/* === CONTACT SECTION === */
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 80px 40px;
+    justify-content: center;
+    border-top: 1px solid #afafaf93; /* إضافة فاصل بسيط */
+}
+.contact a i{
+    color: #ff1edd;
+    font-size: 30px;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+.contact .contact-text .title span{
+    color: #ff1edd;
+}
+.contact .contact-text h1{
+    font-size: 50px;
+    color: #fff;
+}
+.contact .contact-text h2{
+    color: #fff;
+    margin-bottom: 15px;
+}
+.contact .contact-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.contact .contact-list li{
+    color: #fff;
+    line-height: 2;
+    list-style: none;
+    font-size: 1.2rem;
+}
+.contact a i:hover{
+    color: #fff;
+}
+
+
+/* === Responsive Adjustments === */
+@media(max-width : 980px){
+    /*... باقي تنسيقات الـ Responsive هنا ...*/
+    /* (تم الاحتفاظ بها كما هي تقريبًا من الكود الأصلي) */
+    header nav .links{
+        position: absolute;
+        top: 100%;
+        right: -420px;
+        flex-direction: column;
+        background-color: black;
+        border-left: 1px solid #444444a8;
+        width: 400px;
+        height: 100vh;
+        text-align: center;
+        padding: 20px 0;
+        transition: 0.3s;
+    }
+    header nav .links.active{
+        right: 0;
+    }
+    .social-link{
+        display: none;
+    }
+    #btnMenu{
+        display: block;
+        color: #fff;
+        font-size: 30px;
+    }
+    .hero-sec{
+        height: auto;
+    }
+    .hero-sec .contanier{
+        flex-direction: column;
+    }
+    .hero-sec .contanier .div-text{
+        width: 80%;
+        margin-top: 150px;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    .hero-sec .contanier .div-img{
+        position: relative;
+        width: 50%;
+    }
+    .hero-sec .contanier .div-text h1{
+        font-size: 50px;
+    }
+    .hero-sec .contanier .div-text span{
+        font-size: 30px;
+    }
+    .about p{
+        margin:auto;
+        width: 90%;
+    
+    }
+    .projects .project_carte{
+        display: flex; /* أبقيتها flex لإمكانية التمرير الأفقي إذا لزم الأمر */
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+    .project-item {
+        width: 90%;
+        max-width: 400px;
+    }
+    .skills-grid { grid-template-columns: 1fr; }
+
+    .skill-content {
+        width: 90%;
+    }
+}
+@media(max-width:450px){
+    .hero-sec .contanier .div-text h1{
+        font-size: 35px;
+    }
+    .hero-sec .contanier .div-text span{
+        font-size: 25px;
+    }
+    .hero-sec .contanier .div-text p{
+        font-size: 16px;
+    }
+    .hero-sec .contanier .div-img{
+        width: 70%;
+    }
+    header nav .links{
+        width: 100%;
+    }
+}
